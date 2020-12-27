@@ -116,4 +116,21 @@ package servEx.model;
       public void setFlat(int flat) {
           this.flat = flat;
       }
+
+      @Override
+      public String toString() {
+          return "User{" +
+                  "id=" + id +
+                  ", email='" + email + '\'' +
+                  ", password='" + password + '\'' +
+                  ", lastname='" + lastname + '\'' +
+                  ", name='" + name + '\'' +
+                  ", patronym='" + patronym + '\'' +
+                  ", age=" + age +
+                  ", cellPhone='" + cellPhone + '\'' +
+                  ", homePhone='" + homePhone + '\'' +
+                  ", house=" + house +
+                  ", flat=" + flat +
+                  '}';
+      }
   }
