@@ -1,6 +1,7 @@
 package servEx.model;
 
-import java.time.LocalDate;
+
+import java.sql.Date;
 
 public class User {
 
@@ -10,14 +11,14 @@ public class User {
     private String lastname;
     private String name;
     private String patronym;
-    private LocalDate birthdate;
+    private Date birthdate;
     private String cellPhone;
     private String homePhone;
     private int house;
     private int flat;
 
     public User(long id, String email, String password, String lastname,
-                String name, String patronym, LocalDate birthdate, String cellPhone, String homePhone, int house, int flat) {
+                String name, String patronym, Date birthdate, String cellPhone, String homePhone, int house, int flat) {
         this.id = id;
         this.email = email;
         this.password = password;
@@ -79,11 +80,11 @@ public class User {
         this.patronym = patronym;
     }
 
-    public LocalDate getBirthdate() {
+    public Date getBirthdate() {
         return birthdate;
     }
 
-    public void setBirthdate(LocalDate age) {
+    public void setBirthdate(Date age) {
         this.birthdate = birthdate;
     }
 

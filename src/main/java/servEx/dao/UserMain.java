@@ -3,6 +3,7 @@ package servEx.dao;
 import servEx.model.User;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -55,13 +56,13 @@ public class UserMain {
                 String lastname = resultSet.getString(4);
                 String name = resultSet.getString(5);
                 String patronym = resultSet.getString(6);
-                int age = resultSet.getInt(7);
+                Date birthdate = resultSet.getDate(7);
                 String cellPhone = resultSet.getString(8);
                 String homePhone = resultSet.getString(9);
                 int house = resultSet.getInt(10);
                 int flat = resultSet.getInt(11);
                 User user = new User(id, email, password, lastname, name, patronym,
-                        age, cellPhone, homePhone, house, flat);
+                        birthdate, cellPhone, homePhone, house, flat);
                 users.add(user);
             }
         } catch (Exception ex) {
