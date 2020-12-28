@@ -11,11 +11,11 @@ public class CommonConnect {
     static final String USERNAME = "root";
     static final String PASSWORD = "root";
 
-     static Statement getStatement() throws Exception {
+     static Statement getStat() throws Exception {
         Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
         return conn.createStatement();
     }
-     static PreparedStatement getPrepStatement(String sql) throws Exception {
+     static PreparedStatement getPrepStat(String sql) throws Exception {
         Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
         return conn.prepareStatement(sql);
     }

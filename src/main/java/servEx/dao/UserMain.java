@@ -5,15 +5,15 @@ import servEx.model.User;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+
 import static servEx.dao.CommonConnect.*;
 
 public class UserMain {
 
-        private boolean checkUser(String emailOut) {
-        String sql = "SELECT * FROM user WHERE email=?";
-        try (PreparedStatement preparedStatement = getPrepStatement(sql)) {
-            preparedStatement.setString(1, emailOut);
-            ResultSet resultSet = preparedStatement.executeQuery();
+    private boolean checkUser(String emailOut) {
+        try (PreparedStatement prStatement = getPrepStat("SELECT * FROM users WHERE email = ?")) {
+            prStatement.setString(1, emailOut);
+            ResultSet resultSet = prStatement.executeQuery();
             if (resultSet.next()) {
                 return true;
             }
@@ -23,18 +23,21 @@ public class UserMain {
         return false;
     }
 
-    public void addUser(String name, String emailOut, String password) {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
-            try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD)) {
-                String sql = "INSERT INTO user value (null, ?, ?, ?)";
-                try (PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
-                    preparedStatement.setString(1, name);
-                    preparedStatement.setString(2, emailOut);
-                    preparedStatement.setString(3, password);
-                    preparedStatement.executeUpdate();
-                }
-            }
+    static void registrationUser(String email, String password, String lastname, String name, String patronym,
+                                 int age, String cellPhone, String homePhone, int house, int flat) {
+        try (PreparedStatement preparedStatement = getPrepStat(
+                "INSERT INTO users value (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")) {
+            preparedStatement.setString(1, email);
+            preparedStatement.setString(2, password);
+            preparedStatement.setString(3, lastname);
+            preparedStatement.setString(4, name);
+            preparedStatement.setString(5, patronym);
+            preparedStatement.setInt(6, age);
+            preparedStatement.setString(7, cellPhone);
+            preparedStatement.setString(8, homePhone);
+            preparedStatement.setInt(9, house);
+            preparedStatement.setInt(10, flat);
+            preparedStatement.executeUpdate();
         } catch (Exception ex) {
             System.out.println(ex);
         }
@@ -44,8 +47,7 @@ public class UserMain {
     private static List<User> getAllUsers() {
         List<User> users = new ArrayList<>();
         try {
-
-            ResultSet resultSet = getStatement().executeQuery("SELECT * FROM users");
+            ResultSet resultSet = getStat().executeQuery("SELECT * FROM users");
             while (resultSet.next()) {
                 int id = resultSet.getInt(1);
                 String email = resultSet.getString(2);
@@ -61,9 +63,7 @@ public class UserMain {
                 User user = new User(id, email, password, lastname, name, patronym,
                         age, cellPhone, homePhone, house, flat);
                 users.add(user);
-                System.out.println(users);
             }
-
         } catch (Exception ex) {
             System.out.println(ex);
         }
@@ -74,8 +74,15 @@ public class UserMain {
     public static void main(String[] args) {
         List<User> userss = getAllUsers();
 
+
+//        registrationUser("olpol@mail.ru", "123", "Полякова", "Ольга", "Валерьевна",
+//                56, "+375336958763", "+375225486838", 5, 87);
+
         for (User u : userss) {
             System.out.println("1    1  " + u);
         }
+
     }
+
+
 }

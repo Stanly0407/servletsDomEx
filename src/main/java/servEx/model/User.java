@@ -1,136 +1,138 @@
 package servEx.model;
 
-  public class User {
+import java.time.LocalDate;
 
-      private long id;
-      private String email;
-      private String password;
-      private String lastname;
-      private String name;
-      private String patronym;
-      private int age;
-      private String cellPhone;
-      private String homePhone;
-      private int house;
-      private int flat;
+public class User {
 
-      public User(long id, String email, String password, String lastname,
-                  String name, String patronym, int age, String cellPhone, String homePhone, int house, int flat) {
-          this.id = id;
-          this.email = email;
-          this.password = password;
-          this.lastname = lastname;
-          this.name = name;
-          this.patronym = patronym;
-          this.age = age;
-          this.cellPhone = cellPhone;
-          this.homePhone = homePhone;
-          this.house = house;
-          this.flat = flat;
-      }
+    private long id;
+    private String email;
+    private String password;
+    private String lastname;
+    private String name;
+    private String patronym;
+    private LocalDate birthdate;
+    private String cellPhone;
+    private String homePhone;
+    private int house;
+    private int flat;
 
-      public long getId() {
-          return id;
-      }
+    public User(long id, String email, String password, String lastname,
+                String name, String patronym, LocalDate birthdate, String cellPhone, String homePhone, int house, int flat) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.lastname = lastname;
+        this.name = name;
+        this.patronym = patronym;
+        this.birthdate = birthdate;
+        this.cellPhone = cellPhone;
+        this.homePhone = homePhone;
+        this.house = house;
+        this.flat = flat;
+    }
 
-      public void setId(long id) {
-          this.id = id;
-      }
+    public long getId() {
+        return id;
+    }
 
-      public String getEmail() {
-          return email;
-      }
+    public void setId(long id) {
+        this.id = id;
+    }
 
-      public void setEmail(String email) {
-          this.email = email;
-      }
+    public String getEmail() {
+        return email;
+    }
 
-      public String getPassword() {
-          return password;
-      }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-      public void setPassword(String password) {
-          this.password = password;
-      }
+    public String getPassword() {
+        return password;
+    }
 
-      public String getLastname() {
-          return lastname;
-      }
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-      public void setLastname(String lastname) {
-          this.lastname = lastname;
-      }
+    public String getLastname() {
+        return lastname;
+    }
 
-      public String getName() {
-          return name;
-      }
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
 
-      public void setName(String name) {
-          this.name = name;
-      }
+    public String getName() {
+        return name;
+    }
 
-      public String getPatronym() {
-          return patronym;
-      }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-      public void setPatronym(String patronym) {
-          this.patronym = patronym;
-      }
+    public String getPatronym() {
+        return patronym;
+    }
 
-      public int getAge() {
-          return age;
-      }
+    public void setPatronym(String patronym) {
+        this.patronym = patronym;
+    }
 
-      public void setAge(int age) {
-          this.age = age;
-      }
+    public LocalDate getBirthdate() {
+        return birthdate;
+    }
 
-      public String getCellPhone() {
-          return cellPhone;
-      }
+    public void setBirthdate(LocalDate age) {
+        this.birthdate = birthdate;
+    }
 
-      public void setCellPhone(String cellPhone) {
-          this.cellPhone = cellPhone;
-      }
+    public String getCellPhone() {
+        return cellPhone;
+    }
 
-      public String getHomePhone() {
-          return homePhone;
-      }
+    public void setCellPhone(String cellPhone) {
+        this.cellPhone = cellPhone;
+    }
 
-      public void setHomePhone(String homePhone) {
-          this.homePhone = homePhone;
-      }
+    public String getHomePhone() {
+        return homePhone;
+    }
 
-      public int getHouse() {
-          return house;
-      }
+    public void setHomePhone(String homePhone) {
+        this.homePhone = homePhone;
+    }
 
-      public void setHouse(int house) {
-          this.house = house;
-      }
+    public int getHouse() {
+        return house;
+    }
 
-      public int getFlat() {
-          return flat;
-      }
+    public void setHouse(int house) {
+        this.house = house;
+    }
 
-      public void setFlat(int flat) {
-          this.flat = flat;
-      }
+    public int getFlat() {
+        return flat;
+    }
 
-      @Override
-      public String toString() {
-          return "User{" +
-                  "id=" + id +
-                  ", email='" + email + '\'' +
-                  ", password='" + password + '\'' +
-                  ", lastname='" + lastname + '\'' +
-                  ", name='" + name + '\'' +
-                  ", patronym='" + patronym + '\'' +
-                  ", age=" + age +
-                  ", cellPhone='" + cellPhone + '\'' +
-                  ", homePhone='" + homePhone + '\'' +
-                  ", house=" + house +
-                  ", flat=" + flat +
-                  '}';
-      }
-  }
+    public void setFlat(int flat) {
+        this.flat = flat;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", name='" + name + '\'' +
+                ", patronym='" + patronym + '\'' +
+                ", birthdate=" + birthdate +
+                ", cellPhone='" + cellPhone + '\'' +
+                ", homePhone='" + homePhone + '\'' +
+                ", house=" + house +
+                ", flat=" + flat +
+                '}';
+    }
+}
