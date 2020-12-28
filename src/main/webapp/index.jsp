@@ -5,7 +5,20 @@
 </head>
 
 <body>
-<jsp:include page="/commonForPages/footerGuests.jsp"></jsp:include>
+
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="index.jsp">
+        <img src="../images/house.png" width="30" height="30" class="d-inline-block align-top" alt="" >
+        Товарищество собственников "Уютный дом"
+    </a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+            </ul>
+        </div>
+    </nav>
+</nav>
+<img src="/images/house.png" >
 
 <div align="center" style="margin-top: 20px">
     <form style="width: 400px" >

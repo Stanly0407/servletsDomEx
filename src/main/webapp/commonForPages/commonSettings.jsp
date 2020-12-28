@@ -2,9 +2,9 @@
 <html>
 <head>
     <%--    Иконка сайта--%>
-    <link rel="shortcut icon" type="ico/png" href="../images/mainPage">
+    <link rel="shortcut icon" type="ico/png" href="../images/mainPage/mainIcon.png">
     <meta charset="UTF-8"/>
-    <title>SerialsHere Forum</title>
+    <title>Уютный Дом</title>
 
     <%--сообщаем браузеру, что он должен учитывать плотность пикселей на устройстве--%>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
