@@ -3,11 +3,10 @@ package servEx.dao;
 import servEx.model.User;
 
 import java.sql.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import static servEx.dao.CommonConnect.*;
+import static servEx.dao.ConnectorDB.*;
 
 public class UserMain {
 

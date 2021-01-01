@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
 
-public class CommonConnect {
+public class ConnectorDB {
 
     static final String URL = "jdbc:mysql://localhost:3306/CosyHome";
     static final String USERNAME = "root";
